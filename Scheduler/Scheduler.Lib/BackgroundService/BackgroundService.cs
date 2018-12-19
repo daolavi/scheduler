@@ -51,6 +51,8 @@ namespace Scheduler.Lib.BackgroundService
             do
             {
                 await Process();
+
+                await Task.Delay(5000, stoppingToken);
             }
             while (!stoppingToken.IsCancellationRequested);
         }

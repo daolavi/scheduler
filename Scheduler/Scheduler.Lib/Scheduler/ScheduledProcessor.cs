@@ -32,6 +32,7 @@ namespace Scheduler.Lib.Scheduler
                     await Process();
                     _nextRun = _schedule.GetNextOccurrence(DateTime.Now);
                 }
+                await Task.Delay(5000, stoppingToken);
             }
             while (!stoppingToken.IsCancellationRequested);
         }
